@@ -90,23 +90,23 @@ src: ./pages/theory/04-commands-skills-workflows.md
 ---
 
 ---
-src: ./pages/theory/04b-skills.md
+src: ./pages/theory/05-skills.md
 ---
 
 ---
-src: ./pages/theory/05-memory-bank.md
+src: ./pages/theory/06-memory-bank.md
 ---
 
 ---
-src: ./pages/theory/06-quality-safety.md
+src: ./pages/theory/07-quality-safety.md
 ---
 
 ---
-src: ./pages/theory/07-requirements-to-rules.md
+src: ./pages/theory/08-requirements-to-rules.md
 ---
 
 ---
-src: ./pages/theory/08-wrap-up.md
+src: ./pages/theory/09-wrap-up.md
 ---
 
 ---

@@ -27,11 +27,12 @@ layout: center
 - **1. Shift**: Copilot → Agentic IDE (Assisted vs Augmented)
 - **2. Architecture**: Context + Tools + Memory
 - **3. Rules**: Cursor / Claude Code / Copilot / `AGENTS.md`
-- **4. Workflows**: Commands vs Skills + **Skills deep dive** (`SKILLS.md`)
-- **5. Memory Bank**: протокол, файли, рівні складності
-- **6. Quality/Security**: guardrails, anti-patterns, ліцензії
-- **7. Requirements→Rules**: як витягувати правила з вимог
-- **8. Wrap-up**: чекліст, Q&A, джерела
+- **4. Workflows**: Commands vs Skills
+- **5. Skills**: deep dive (`SKILLS.md`)
+- **6. Memory Bank**: протокол, файли, рівні складності
+- **7. Quality/Security**: guardrails, anti-patterns, ліцензії
+- **8. Requirements→Rules**: як витягувати правила з вимог
+- **9. Wrap-up**: чекліст, Q&A, джерела
 
 </v-clicks>
 
@@ -59,8 +60,8 @@ layout: center
 -->
 
 ---
-layout: center
----
+
+## layout: center
 
 # Практика взаємодії: Plan → Act (замість “пиши код одразу”)
 
@@ -85,4 +86,3 @@ flowchart LR
 <!--
 Ідея Plan/Act як захист від передчасних великих змін: @docs/gemini-research.md (Plan/Act pattern).
 -->
-
