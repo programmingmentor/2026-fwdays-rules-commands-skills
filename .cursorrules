@@ -1,0 +1,254 @@
+# Cursor Rules for Slidev Presentation Project
+
+## Project Context
+
+This is a **Slidev presentation project** for a workshop titled "Правила, команди та навички для Agentic IDE". The project uses Vue 3 with TypeScript and Slidev framework to create interactive presentation slides. The presentation is bilingual (Ukrainian and English) and is deployed to GitHub Pages via Netlify.
+
+**Project Name**: 2026-fwdays-rules-commands-skills  
+**Primary Purpose**: Create and maintain presentation slides for workshops and talks about AI-assisted development
+
+## Technology Stack
+
+- **Languages**: TypeScript, JavaScript (ES modules)
+- **Frameworks**: Vue 3 (Composition API), Slidev
+- **Styling**: UnoCSS (utility-first CSS framework)
+- **Build Tools**: Slidev CLI, Vite (underlying)
+- **Package Manager**: npm
+- **Node Version**: Node 20+ (as specified in netlify.toml)
+- **Deployment**: Netlify (GitHub Pages)
+- **Code Formatting**: Prettier with prettier-plugin-slidev
+
+## Project Structure
+
+```
+/
+├── components/          # Reusable Vue components
+├── layouts/            # Custom slide layouts
+├── pages/              # Additional slide pages
+├── public/             # Static assets (images, SVGs)
+├── snippets/           # Code snippets and utilities
+├── slides.md           # Main presentation file
+└── global-top.vue      # Global top component
+```
+
+**Key Directories**:
+- `components/` - Reusable Vue components (e.g., Counter.vue, SsaLogo.vue)
+- `layouts/` - Custom slide layouts with TypeScript helpers
+- `public/` - Static assets referenced in slides
+- `snippets/` - Shared TypeScript utilities
+
+## Code Style Guidelines
+
+### Vue Components
+
+- **Always use Composition API** with `<script setup lang="ts">`
+- **Use TypeScript** for all component logic
+- **Define props with TypeScript types**:
+  ```typescript
+  const props = defineProps({
+    count: {
+      type: Number,
+      default: 0,
+    },
+    image: {
+      type: String,
+    },
+  })
+  ```
+- **Use `ref` and `computed`** from Vue for reactivity
+- **Prefer `computed`** for derived state
+- **Use scoped styles** when component-specific CSS is needed
+
+### Styling
+
+- **Use UnoCSS utility classes** for styling (preferred method)
+- **UnoCSS syntax**: Use attribute-style syntax like `border="~ main rounded-md"`, `p="2"`, `hover:bg="gray-400 opacity-20"`
+- **Use scoped CSS** only when UnoCSS utilities are insufficient
+- **Leverage CSS variables** for theming: `var(--slidev-theme-primary)`
+- **Use Tailwind-like classes** where UnoCSS supports them
+
+### TypeScript
+
+- **Use strict TypeScript** - always provide types
+- **Import types explicitly**: `import type { CSSProperties } from "vue"`
+- **Use type annotations** for function parameters and return types
+- **Prefer type imports** when importing only types: `import type { ... }`
+
+### File Organization
+
+- **Component files**: PascalCase (e.g., `Counter.vue`, `SsaLogo.vue`)
+- **Layout files**: kebab-case (e.g., `image-left-bg-color.vue`)
+- **Utility files**: kebab-case (e.g., `layoutHelper.ts`)
+- **Slide files**: kebab-case (e.g., `imported-slides.md`)
+
+## Naming Conventions
+
+- **Components**: PascalCase (e.g., `Counter.vue`, `SsaLogo.vue`)
+- **Files**: kebab-case for non-components (e.g., `layout-helper.ts`, `image-left-bg-color.vue`)
+- **Variables**: camelCase (e.g., `backgroundSize`, `bgColor`)
+- **Functions**: camelCase (e.g., `handleBackground`, `resolveAssetUrl`)
+- **Constants**: camelCase or UPPER_SNAKE_CASE for true constants
+- **Props**: camelCase (e.g., `bgColor`, `backgroundSize`)
+
+## Best Practices
+
+### Vue Components
+
+1. **Always use `<script setup lang="ts">`** - never use Options API
+2. **Define props with proper types** and defaults when appropriate
+3. **Use `computed` for derived values** from props
+4. **Keep components focused** - single responsibility
+5. **Use slots** for flexible content injection
+6. **Leverage Vue's reactivity system** - prefer `ref` and `computed` over manual state management
+
+### Slidev Specific
+
+1. **Use Slidev's built-in layouts** when possible, create custom layouts only when needed
+2. **Leverage UnoCSS** for styling slides - it's built into Slidev
+3. **Use frontmatter** in slides.md for configuration (theme, transitions, etc.)
+4. **Organize images** in `public/` directory and reference with `/filename.png`
+5. **Use Slidev's navigation** API: `$slidev.nav.next`, `$slidev.nav.prev`
+
+### Code Organization
+
+1. **Extract reusable logic** into helper functions (e.g., `layoutHelper.ts`)
+2. **Keep components small and focused**
+3. **Use TypeScript for type safety** - avoid `any` types
+4. **Group related functionality** in the same file or directory
+
+## Common Patterns
+
+### Component Pattern
+```vue
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+
+const props = defineProps({
+  // typed props
+})
+
+const state = ref(initialValue)
+const derived = computed(() => /* ... */)
+</script>
+
+<template>
+  <!-- UnoCSS utility classes -->
+</template>
+
+<style scoped>
+/* Only when UnoCSS is insufficient */
+</style>
+```
+
+### Layout Helper Pattern
+```typescript
+import type { CSSProperties } from "vue";
+
+export function helperFunction(param: string): CSSProperties {
+  // implementation
+}
+```
+
+### Slide Frontmatter Pattern
+```markdown
+---
+theme: default
+background: https://cover.sli.dev
+class: text-center
+transition: slide-left
+mdc: true
+---
+```
+
+## Avoid
+
+- ❌ **Don't use Options API** - always use Composition API
+- ❌ **Don't use `any` types** - always provide proper TypeScript types
+- ❌ **Don't use inline styles** when UnoCSS utilities can be used
+- ❌ **Don't create components** for simple one-off UI elements
+- ❌ **Don't hardcode paths** - use `/` for public assets
+- ❌ **Don't use class-based components** - use functional components only
+- ❌ **Don't mix naming conventions** - stick to the conventions above
+
+## Testing
+
+- **No formal testing framework** currently configured
+- **Manual testing** via `npm run dev` for slide development
+- **Visual verification** of slides and components
+
+## Documentation
+
+- **README.md** contains deployment URL
+- **Code comments** should explain "why" not "what"
+- **Use JSDoc** for public utility functions if needed
+- **Keep slide content** in markdown format for readability
+
+## Platform Considerations
+
+- **OS**: Windows 11
+- **Terminal**: Git Bash
+- **File paths**: Use forward slashes `/` in code (works on Windows with Git Bash)
+- **Commands**: Use npm scripts (`npm run dev`, `npm run build`, `npm run export`)
+- **Node version**: Node 20+ required
+
+## Language Preferences
+
+- **Communication**: English or Ukrainian (as per user preference)
+- **Code**: English (variable names, comments, documentation)
+- **Slide content**: Ukrainian and English (bilingual presentation)
+- **Comments**: English (for code comments)
+
+## AI Assistant Preferences
+
+### Code Generation
+
+- **Always include TypeScript types** - never use `any` without good reason
+- **Prefer Composition API** - always use `<script setup lang="ts">`
+- **Use UnoCSS utilities** - prefer utility classes over custom CSS
+- **Follow existing patterns** - match the style of existing components
+- **Include prop types** - always define props with proper types
+
+### Communication Style
+
+- **Be concise** but thorough
+- **Explain reasoning** when making architectural decisions
+- **Provide examples** when introducing new patterns
+- **Use English** for technical discussions unless user requests Ukrainian
+
+### When Adding Features
+
+- **Update components** following existing patterns
+- **Use TypeScript** for all new code
+- **Leverage UnoCSS** for styling
+- **Keep components reusable** - avoid one-off solutions
+- **Maintain consistency** with existing codebase
+
+## Slidev Specific Guidelines
+
+- **Use MDC syntax** (Markdown Components) when enabled in frontmatter
+- **Leverage Slidev themes** - use `theme: default` or `theme: seriph`
+- **Use transitions** appropriately: `transition: slide-left`, `fade`, etc.
+- **Organize slides** logically in `slides.md`
+- **Use components** for repeated slide elements
+- **Reference images** from `public/` directory with `/filename.ext`
+- **Use UnoCSS classes** for layout and styling within slides
+
+## Git Workflow
+
+- **Branch naming**: Not strictly enforced, but prefer descriptive names
+- **Commit messages**: Descriptive, in English
+- **Deployment**: Automatic via Netlify on push to master branch
+
+## Environment Variables
+
+- **BASE_URL**: Used for asset resolution (handled by Slidev/Vite)
+- **No custom environment variables** currently required
+
+## Build & Deployment
+
+- **Build command**: `npm run build` (generates `dist/` directory)
+- **Dev command**: `npm run dev` (starts Slidev dev server)
+- **Export command**: `npm run export` (exports slides as PDF/PNG)
+- **Deployment**: Netlify automatically builds and deploys from `dist/`
+- **Node version**: 20 (configured in netlify.toml)
+
