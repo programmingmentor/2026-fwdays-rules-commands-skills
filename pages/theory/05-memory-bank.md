@@ -45,14 +45,15 @@ Memory Bank як патерн: @docs/chatgpt-reasearch.md (Memory Bank),
 # Канонічна структура (приклад)
 
 ```text
-memory-bank/
-  projectbrief.md
-  productContext.md
-  systemPatterns.md
-  techContext.md
-  activeContext.md
-  progress.md
-  decisionLog.md
+docs/
+  memory/
+    projectbrief.md
+    productContext.md
+    systemPatterns.md
+    techContext.md
+    activeContext.md
+    progress.md
+    decisionLog.md
 ```
 
 <v-clicks>
@@ -125,16 +126,16 @@ flowchart LR
 
 ---
 
-# Фази workflow (vanzan / memory-bank framework як ідея)
+# Фази workflow (приклад)
 
 <v-clicks>
 
-- **/van**: оцінка, чи потрібен детальний процес
-- **/plan**: план без коду
-- **/creative**: альтернативи, pros/cons
-- **/build**: імплементація
-- **/reflect**: ревʼю та оновлення патернів
-- **/archive**: закріпити результат, почистити active context
+- **Triage**: оцінка, чи потрібен детальний процес
+- **Plan**: план без коду (що/де/як перевіряємо)
+- **Design**: альтернативи, trade-offs (pros/cons)
+- **Build**: імплементація за планом
+- **Reflect**: ревʼю результату + оновлення правил/патернів
+- **Archive**: зафіксувати підсумок, “очистити” активний контекст
 
 </v-clicks>
 

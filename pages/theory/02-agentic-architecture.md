@@ -162,7 +162,7 @@ Memory Bank та checkpoints згадуються в @docs/gemini-research.md і
 
 - `rules/` або `.cursor/rules/` / `CLAUDE.md` / `.github/*instructions*`
 - `commands/` / slash commands / prompt templates
-- `memory-bank/` (або аналог) для довготривалого стану
+- `docs/` (наприклад `docs/memory/`) як **Memory Bank** для довготривалого стану
 
 </v-clicks>
 

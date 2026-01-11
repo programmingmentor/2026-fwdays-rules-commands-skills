@@ -90,6 +90,10 @@ src: ./pages/theory/04-commands-skills-workflows.md
 ---
 
 ---
+src: ./pages/theory/04b-skills.md
+---
+
+---
 src: ./pages/theory/05-memory-bank.md
 ---
 

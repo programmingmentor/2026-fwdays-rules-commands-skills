@@ -32,7 +32,7 @@ layout: center
 
 # Commands: найпростіша автоматизація (приклад)
 
-У цьому репозиторії є готовий шаблон-команда для вставки зображення:
+У цьому репозиторії є готовий шаблон-команда для вставки зображення (`.cursor/commands/image.md`):
 
 ```html
 <div class="w-full flex justify-center">
@@ -40,15 +40,9 @@ layout: center
 </div>
 ```
 
-<!--
-Файл: .cursor/commands/image.md
--->
+<br>
 
----
-
-# Commands як “стандартизовані промпти” для команди
-
-Приклад командного шаблону “згенеруй rules для проєкту”:
+Приклад командного шаблону “згенеруй rules для проєкту” (`.cursor/commands/gen-rules.md`):
 
 <v-clicks>
 
@@ -57,10 +51,6 @@ layout: center
 - зменшує “хаос різних підходів” у команді
 
 </v-clicks>
-
-<!--
-Файл: .cursor/commands/gen-rules.md
--->
 
 ---
 
@@ -95,6 +85,7 @@ Stage all changes and create a commit with message: $ARGUMENTS
 - **Skill** = набір інструкцій + ресурси + (часто) правила tool use
 - Корисно для: code review пайплайн, деплой, міграції, security audit
 - Перевага: “знання” не губиться в чаті, а живе як **артефакт**
+- Детально про “пакування” skills: секція **Skills (SKILLS.md)** далі
 
 </v-clicks>
 
