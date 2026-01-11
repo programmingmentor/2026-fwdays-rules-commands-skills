@@ -1,1 +1,1 @@
-https://programmingmentor.github.io/2025-fwdays-agentic-sdd-01/
+https://programmingmentor.github.io/2026-fwdays-rules-commands-skills/

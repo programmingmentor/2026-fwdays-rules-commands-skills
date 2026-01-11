@@ -70,11 +70,47 @@ image: /vyacheslav-koldovskyy.png
 - Лінкедін: [koldovsky](https://www.linkedin.com/in/koldovsky/)
 
 ---
+src: ./pages/theory/00-agenda.md
+---
+
+---
+src: ./pages/theory/01-paradigm-shift.md
+---
+
+---
+src: ./pages/theory/02-agentic-architecture.md
+---
+
+---
+src: ./pages/theory/03-rules-systems.md
+---
+
+---
+src: ./pages/theory/04-commands-skills-workflows.md
+---
+
+---
+src: ./pages/theory/05-memory-bank.md
+---
+
+---
+src: ./pages/theory/06-quality-safety.md
+---
+
+---
+src: ./pages/theory/07-requirements-to-rules.md
+---
+
+---
+src: ./pages/theory/08-wrap-up.md
+---
+
+---
 layout: end
 ---
 
 # Дякую!
 
 <div class="w-full flex justify-center mt-20">
-  <a href="https://programmingmentor.github.io/2025-fwdays-agentic-sdd-01/">https://programmingmentor.github.io/2025-fwdays-agentic-sdd-01/</a>
+  <a href="https://programmingmentor.github.io/2026-fwdays-rules-commands-skills/">https://programmingmentor.github.io/2026-fwdays-rules-commands-skills/</a>
 </div>
