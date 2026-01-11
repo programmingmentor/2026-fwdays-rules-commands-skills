@@ -80,6 +80,60 @@ Steps:
 
 ---
 
+# Приклад: simple skill (у SKILLS.md)
+
+Навіть “простий” skill має бути **перевірним** і давати однозначний вихід.
+
+```markdown
+## build-verify
+When: після серії правок у слайдах
+Inputs: робоче дерево репозиторію
+Outputs: `npm run build` проходить (зелено)
+Steps:
+1) Run: npm run build
+2) If failed: locate the slide/file from error output
+3) Fix markdown/mermaid/import issue
+4) Re-run: npm run build
+```
+
+<!--
+Це приклад “skill як процедура”, а не “запусти команду один раз”.
+-->
+
+---
+
+# Приклад: complex skill як пакет (SKILL.md + ресурси)
+
+Іноді skill зручніше описувати як “пакет” з маніфестом `SKILL.md` + файлами-чеклістами.
+
+```text
+skills/
+  code-review/
+    SKILL.md
+    checklist.md
+    output-template.md
+```
+
+```markdown
+---
+name: code-review
+description: Review changes with checklist, run checks, produce risks and suggestions
+allowed-tools: Read, Grep, Bash(npm:*)
+---
+
+1) Read AGENTS.md + relevant rules
+2) Review diff / changed files
+3) Run: npm run build (and/or tests if configured)
+4) Apply checklist.md (security, quality, consistency)
+5) Output using output-template.md (summary, risks, next steps)
+```
+
+<!--
+SKILL.md тут як приклад формату “agent skill manifest” (див. agentskills.io/specification).
+-->
+
+---
+
 # Принципи якісного skill
 
 <v-clicks>
