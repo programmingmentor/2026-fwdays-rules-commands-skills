@@ -55,7 +55,13 @@ overviewSnapshots: true
 class: text-center
 ---
 
-<div class="absolute inset-0 w-full h-full" style="background-image: url('/fw-days-promo.png'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+<div class="absolute inset-0 w-full h-full" style="background-image: url('/fw-days-promo.jpg'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+
+<style>
+  .slidev-page {
+    background: transparent !important;
+  }
+</style>
 
 ---
 layout: image-left
