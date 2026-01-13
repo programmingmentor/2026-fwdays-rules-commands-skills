@@ -7,7 +7,7 @@ layout: center
 <v-clicks>
 
 - Agentic IDE = **контекст + інструменти + памʼять**
-- Правила — це **policy**, команди — **workflow**, памʼять — **стан**
+- Правила — **policy**, команди — **шаблони (templates)**, навички (skills) — **workflows**, памʼять — **стан**
 - Найбільший буст якості: **Plan → Act → Verify → Update**
 - Стандартизуємо “tribal knowledge” → у репозиторій
 
@@ -22,13 +22,13 @@ layout: center
 1. Додайте **project rules** (коротко: стек, стиль, NEVER/ASK FIRST)
 2. Оформіть 3–5 **commands** для типових задач (review/tests/docs)
 3. Заведіть мінімальний **Memory Bank** (наприклад `docs/memory/activeContext.md` + `docs/memory/progress.md`)
-4. Заведіть `SKILLS.md` (каталог повторюваних процедур для команди)
+4. Заведіть `SKILLS.md` (каталог повторюваних процедур для команди).
 
 </v-clicks>
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Q&A
 
@@ -36,7 +36,7 @@ layout: center
 
 - Де у вас найбільше “хаосу контексту” сьогодні?
 - Які правила ви б додали першими (безпека / стиль / архітектура)?
-- Який workflow вам потрібен завтра: tests? review? refactor?
+- Який workflow вам потрібен завтра: tests? review? refactor?.
 
 </v-clicks>
 

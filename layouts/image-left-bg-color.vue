@@ -2,21 +2,16 @@
 import { computed } from "vue";
 import { handleBackground } from "./layoutHelper";
 
-const props = defineProps({
-  image: {
-    type: String,
-  },
-  class: {
-    type: String,
-  },
-  backgroundSize: {
-    type: String,
-    default: "cover",
-  },
-  bgColor: {
-    type: String,
-    default: "white", // Default background color
-  },
+type Props = {
+  image?: string;
+  class?: string;
+  backgroundSize?: string;
+  bgColor?: string;
+};
+
+const props = withDefaults(defineProps<Props>(), {
+  backgroundSize: "cover",
+  bgColor: "white",
 });
 
 const style = computed(() => {

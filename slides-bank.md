@@ -50,8 +50,8 @@ backgroundSize: 80%
 
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Чи взагалі це можливо "1000x Developer"?
 

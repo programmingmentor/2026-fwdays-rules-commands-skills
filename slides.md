@@ -24,7 +24,7 @@ overviewSnapshots: true
 
 # Правила, команди та навички для Agentic IDE
 
-В'ячеслав Колдовський
+В’ячеслав Колдовський
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -33,7 +33,7 @@ overviewSnapshots: true
 </div>
 
 <div class="m-6 flex gap-2 fixed bottom-0 left-0">
-  <a href="https://www.youtube.com/c/programmingmentorua">
+  <a href="https://www.youtube.com/c/programmingmentorua" class="social-link">
     <div class="h-8 w-8">
       <img src="/pm-logo.jpg" class="h-full w-full rounded-full"/>
     </div>
@@ -41,29 +41,26 @@ overviewSnapshots: true
 </div>
 
 <style>
-  a {
+  .social-link {
     text-decoration: none;
     border: 2.4px solid transparent;
+    display: block;
   }
-  a:hover {
+  .social-link:hover {
     border-color: var(--slidev-theme-primary);
   }
 </style>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
 
 ---
 layout: image-left
 image: /vyacheslav-koldovskyy.png
 ---
 
-# В'ячеслав Колдовський
+# В’ячеслав Колдовський
 
 - Ph.D, доцент, 20+ років в IT
 - Competence Manager, SoftServe
-- Certified Google Cloud Professional Architect, Certified nVidia Generative AI with LLMs
+- Certified Google Cloud Professional Architect, Certified NVIDIA Generative AI with LLMs
 - Керівник Центру Генеративного AI в IT STEP University
 - Ютубер: [youtube.com/@programmingmentorua](https://www.youtube.com/@programmingmentorua)
 - Блогер: [t.me/programmingmentor](https://t.me/programmingmentor)
@@ -116,5 +113,5 @@ layout: end
 # Дякую!
 
 <div class="w-full flex justify-center mt-20">
-  <a href="https://programmingmentor.github.io/2026-fwdays-rules-commands-skills/">https://programmingmentor.github.io/2026-fwdays-rules-commands-skills/</a>
+  <a href="https://programmingmentor.github.io/2026-fwdays-rules-commands-skills/">programmingmentor.github.io/2026-fwdays-rules-commands-skills</a>
 </div>

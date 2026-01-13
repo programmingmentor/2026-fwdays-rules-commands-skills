@@ -8,7 +8,7 @@ layout: center
 
 - Чому **ad-hoc промптинг** ламається на масштабі
 - Як зробити поведінку агента **стабільною та повторюваною**
-- Які **артефакти** залишаються в репозиторії (rules / commands / memory)
+- Які **артефакти** залишаються в репозиторії (rules / commands / memory).
 
 </v-clicks>
 
@@ -19,7 +19,7 @@ layout: center
 
 ---
 
-# Структура (Outline) — ~70–80 слайдів
+# Структура (Outline)
 
 <v-clicks>
 
@@ -32,7 +32,7 @@ layout: center
 - **6. Memory Bank**: протокол, файли, рівні складності
 - **7. Quality/Security**: guardrails, anti-patterns, ліцензії
 - **8. Requirements→Rules**: як витягувати правила з вимог
-- **9. Wrap-up**: чекліст, Q&A, джерела
+- **9. Wrap-up**: чекліст, Q&A, джерела.
 
 </v-clicks>
 
@@ -41,8 +41,10 @@ layout: center
 - chatgpt-reasearch.md: ad-hoc vs системний підхід, правила/антипатерни
 - claude-research.md: Agentic IDE архітектура, OODA, MCP, memory bank і процес
 - gemini-research.md: порівняння Cursor/Claude/Copilot rules systems
-- gemini-research-agents.md: AGENTS.md стандарт + ризики (prompt injection)
+- gemini-research-agents.md: AGENTS.md стандарт + ризики (prompt injection).
 -->
+
+---
 
 # Після цієї частини ви зможете…
 
@@ -51,7 +53,7 @@ layout: center
 - Пояснити, що таке **Agentic IDE** і чим вона відрізняється від Copilot-стилю
 - Розкласти “контекст” на **правила (rules)**, **команди (commands)**, **памʼять (memory)**
 - Налаштувати мінімальний набір **guardrails**: що агенту можна/не можна робити
-- Вибудувати базовий **workflow**: Spec → Plan → Act → Verify → Update
+- Вибудувати базовий **workflow**: Spec → Plan → Act → Verify → Update.
 
 </v-clicks>
 
@@ -60,8 +62,8 @@ layout: center
 -->
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Практика взаємодії: Plan → Act (замість “пиши код одразу”)
 

@@ -68,7 +68,7 @@ Stage all changes and create a commit with message: $ARGUMENTS
 <v-clicks>
 
 - Команди = “маленькі workflow”
-- Вони дисциплінують і **стандартизують** взаємодію з агентом
+- Вони дисциплінують і **стандартизують** взаємодію з агентом.
 
 </v-clicks>
 
@@ -110,7 +110,7 @@ Stage all changes and create a commit with message: $ARGUMENTS
 
 - Спочатку **план** (де/що/ризики/як перевіряємо)
 - Потім **виконання** маленькими кроками
-- Після кожного кроку: **перевірка** (build/test) + коротка рефлексія
+- Після кожного кроку: **перевірка** (build/test) + коротка рефлексія.
 
 </v-clicks>
 
@@ -131,7 +131,7 @@ flowchart LR
 2. **Plan**: список кроків + критерії успіху (DoD)
 3. **Act**: мінімальні зміни + часті перевірки
 4. **Verify**: build/test + security checklist
-5. **Update**: rules/memory, якщо помилка повторюється
+5. **Update**: rules/memory, якщо помилка повторюється.
 
 </v-clicks>
 
