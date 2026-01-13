@@ -16,11 +16,11 @@ layout: center
 
 # Rules vs Commands vs Skills (коротко)
 
-| Концепт | Навіщо | Приклад |
-| --- | --- | --- |
-| **Rules** | сталі рамки | “NEVER commit secrets” |
-| **Command** | повторюваний запит | “/review this diff” |
-| **Skill** | workflow з кроками | “Generate tests → run → fix” |
+| Концепт     | Навіщо             | Приклад                      |
+| ----------- | ------------------ | ---------------------------- |
+| **Rules**   | сталі рамки        | “NEVER commit secrets”       |
+| **Command** | повторюваний запит | “/review this diff”          |
+| **Skill**   | workflow з кроками | “Generate tests → run → fix” |
 
 <v-clicks>
 
@@ -36,7 +36,7 @@ layout: center
 
 ```html
 <div class="w-full flex justify-center">
-  <img src="/image.png" class="w-4/5"/>
+  <img src="/image.png" class="w-4/5" />
 </div>
 ```
 
@@ -54,7 +54,7 @@ layout: center
 
 ---
 
-# Claude Code: custom slash commands (ідея)
+# Claude Code: custom slash commands
 
 ```markdown
 ---
@@ -62,6 +62,7 @@ allowed-tools: Bash(git add:*), Bash(git commit:*)
 argument-hint: [commit message]
 description: Create a conventional commit
 ---
+
 Stage all changes and create a commit with message: $ARGUMENTS
 ```
 
@@ -93,10 +94,10 @@ Stage all changes and create a commit with message: $ARGUMENTS
 
 # Multi-agent vs sub-agent (Cursor vs Claude)
 
-| Патерн | Ідея | Коли корисно |
-| --- | --- | --- |
-| **Multi-agent** | паралельні агенти з різними стратегіями | порівняти підходи |
-| **Sub-agents** | допоміжні підзадачі під керуванням одного агента | великі зміни системно |
+| Патерн          | Ідея                                             | Коли корисно          |
+| --------------- | ------------------------------------------------ | --------------------- |
+| **Multi-agent** | паралельні агенти з різними стратегіями          | порівняти підходи     |
+| **Sub-agents**  | допоміжні підзадачі під керуванням одного агента | великі зміни системно |
 
 <!--
 Порівняння Cursor vs Claude Code: @docs/chatgpt-reasearch.md, @docs/gemini-research.md.
@@ -134,4 +135,3 @@ flowchart LR
 5. **Update**: rules/memory, якщо помилка повторюється.
 
 </v-clicks>
-

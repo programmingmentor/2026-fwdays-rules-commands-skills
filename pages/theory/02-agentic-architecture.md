@@ -92,24 +92,27 @@ MCP як стандарт доступу до зовнішніх даних/ін
 
 # Tool loop: короткий цикл зворотного зв’язку (feedback loop)
 
+<div style="transform: scale(0.5); transform-origin: top center; margin-bottom: -25%;">
+
 ```mermaid
 sequenceDiagram
-  participant User
-  participant Agent
-  participant Tools
-  participant Repo
-  User->>Agent: Goal
-  Agent->>Repo: Read_rules_and_code
-  Agent->>Repo: Apply_changes
-  Agent->>Tools: Run_build_or_tests
-  Tools-->>Agent: Output_logs_errors
-  Agent-->>User: Diff_and_status
+  participant U as User
+  participant A as Agent
+  participant T as Tools
+  participant R as Repo
+  U->>A: Goal
+  A->>R: Read & Apply
+  A->>T: Build/Test
+  T-->>A: Errors
+  A-->>U: Result
 ```
 
-<v-clicks>
+</div>
 
+<v-clicks>
+  
 - Найцінніше: **перевірка реальністю** (build/test) замість “віри в текст”
-- В ідеалі — автоматизований повтор: “поки зелено”
+- В ідеалі — автоматизований повтор: “поки зелено” (quality gates).
 
 </v-clicks>
 
@@ -135,6 +138,9 @@ sequenceDiagram
 - **Docs**: PRD/RFC/ADR (чому і що будуємо)
 - **Memory Bank**: поточний фокус + прогрес + рішення
 - **Checkpoints**: “знімки стану” для відкату (як концепт)
+- **Git history**: коміти + повідомлення як "хронологія рішень"
+- **Tests**: тести як жива специфікація поведінки (living docs)
+- **Code comments/JSDoc**: документація в коді про наміри та обмеження.
 
 </v-clicks>
 
@@ -150,7 +156,7 @@ Memory Bank та checkpoints згадуються в @docs/gemini-research.md і
 
 - ✅ **ALWAYS**: описуй план + як перевіряєш (build/test)
 - ⚠️ **ASK FIRST**: масові рефактори, видалення файлів, зміна API/схем
-- ⛔ **NEVER**: секрети, “хардкод” ключів, обхід політик, небезпечні команди
+- ⛔ **NEVER**: секрети, “хардкод” ключів, обхід політик, небезпечні команди.
 
 </v-clicks>
 

@@ -52,6 +52,12 @@ overviewSnapshots: true
 </style>
 
 ---
+class: text-center
+---
+
+<div class="absolute inset-0 w-full h-full" style="background-image: url('/fw-days-promo.png'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+
+---
 layout: image-left
 image: /vyacheslav-koldovskyy.png
 ---
@@ -103,7 +109,11 @@ src: ./pages/theory/08-requirements-to-rules.md
 ---
 
 ---
-src: ./pages/theory/09-wrap-up.md
+src: ./pages/theory/09-bonus-ralph-wiggum.md
+---
+
+---
+src: ./pages/theory/10-wrap-up.md
 ---
 
 ---

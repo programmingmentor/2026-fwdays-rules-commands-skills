@@ -8,7 +8,7 @@ layout: center
 
 - **Skill** = упакований, повторюваний **workflow** (процедура), а не “просто промпт”
 - Дає **стабільність**: одна й та сама задача → однакові кроки → однакові перевірки
-- Добре масштабується на команду: “tribal knowledge” стає артефактом у репозиторії
+- Добре масштабується на команду: “неписані правила” стають артефактом у репозиторії.
 
 </v-clicks>
 
@@ -31,7 +31,8 @@ layout: center
 
 <v-clicks>
 
-Приклади, які майже завжди краще як skill:
+Приклади де краще використовувати skill:
+
 - генерація тестів + запуск + фікс падінь
 - code review за чеклістом + пропозиції правок
 - міграція (з планом, поетапно, з валідацією)
@@ -64,14 +65,16 @@ flowchart LR
 
 ```markdown
 ## test-generator
+
 When: після реалізації фічі або refactor
 Inputs: список змінених файлів + acceptance criteria
 Outputs: тести + команда запуску + результат прогону
 Safety: no secrets, no destructive ops without ASK FIRST
 Steps:
-1) Generate tests (happy + unhappy paths)
-2) Run tests
-3) Fix failures, re-run until green
+
+1. Generate tests (happy + unhappy paths)
+2. Run tests
+3. Fix failures, re-run until green
 ```
 
 <!--
@@ -86,14 +89,16 @@ Steps:
 
 ```markdown
 ## build-verify
+
 When: після серії правок у слайдах
 Inputs: робоче дерево репозиторію
 Outputs: `npm run build` проходить (зелено)
 Steps:
-1) Run: npm run build
-2) If failed: locate the slide/file from error output
-3) Fix markdown/mermaid/import issue
-4) Re-run: npm run build
+
+1. Run: npm run build
+2. If failed: locate the slide/file from error output
+3. Fix markdown/mermaid/import issue
+4. Re-run: npm run build
 ```
 
 <!--
@@ -121,11 +126,11 @@ description: Review changes with checklist, run checks, produce risks and sugges
 allowed-tools: Read, Grep, Bash(npm:*)
 ---
 
-1) Read AGENTS.md + relevant rules
-2) Review diff / changed files
-3) Run: npm run build (and/or tests if configured)
-4) Apply checklist.md (security, quality, consistency)
-5) Output using output-template.md (summary, risks, next steps)
+1. Read AGENTS.md + relevant rules
+2. Review diff / changed files
+3. Run: npm run build (and/or tests if configured)
+4. Apply checklist.md (security, quality, consistency)
+5. Output using output-template.md (summary, risks, next steps)
 ```
 
 <!--
@@ -151,3 +156,16 @@ SKILL.md тут як приклад формату “agent skill manifest” (�
 на кшталт name/description/allowed-tools. Див. https://agentskills.io/specification
 -->
 
+---
+
+# Anthropic Skills repository
+
+<div class="w-full flex justify-center">
+  <img src="/skills-repo.png" class="w-2/5" />
+</div>
+
+<br>
+
+<div class="w-full flex justify-center">
+  <a href="https://github.com/anthropics/skills" target="_blank" >https://github.com/anthropics/skills</a>
+</div>

@@ -32,7 +32,8 @@ layout: center
 - **6. Memory Bank**: протокол, файли, рівні складності
 - **7. Quality/Security**: guardrails, anti-patterns, ліцензії
 - **8. Requirements→Rules**: як витягувати правила з вимог
-- **9. Wrap-up**: чекліст, Q&A, джерела.
+- **9. Bonus**: Ralph Wiggum loop (агент у циклі)
+- **10. Wrap-up**: чекліст, Q&A, джерела.
 
 </v-clicks>
 

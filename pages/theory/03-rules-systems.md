@@ -36,13 +36,17 @@ Cursor: user rules + project rules + team rules; Copilot: personal+repo+org.
 
 # Пріоритети та конфлікти: що “виграє”
 
+<div style="transform: scale(1); transform-origin: top center;">
+
 ```mermaid
-flowchart TB
+flowchart LR
   SystemRules[System_or_User_rules] --> ProjectRules[Project_rules]
   ProjectRules --> PathRules[Path_specific_rules]
   PathRules --> Session[Session_instructions]
   Session --> Output[Model_output]
 ```
+
+</div>
 
 <v-clicks>
 
@@ -57,18 +61,19 @@ flowchart TB
 
 ---
 
-# Cursor: `.cursorrules` (legacy) vs `.cursor/rules/*.mdc` (modern)
+# Cursor: еволюція форматів правил
 
 <v-clicks>
 
-- Старий підхід: один файл `.cursorrules` (простий, але без гнучкого scope)
-- Новий підхід: директорія `.cursor/rules/` з файлами `.mdc` + frontmatter
-- Перевага: **точне застосування** правил за globs/умовами, менше шуму в контексті.
+- **Legacy**: `.cursorrules` (один файл) — deprecated, але ще підтримується
+- **v0.45+**: `.cursor/rules/*.mdc` (файли) — функціональні, але не рекомендовані для нових правил
+- **v2.2+**: `.cursor/rules/*/` (папки) — **новий рекомендований формат** для кращої читабельності та підтримки.
 
 </v-clicks>
 
 <!--
-Про депрекейт .cursorrules та перехід на .cursor/rules: @docs/gemini-research.md.
+Еволюція форматів: .cursorrules → .mdc файли → папки в .cursor/rules (v2.2+).
+Документація: https://cursor.com/docs/context/rules#mdc-cursor-rules
 -->
 
 ---
@@ -131,14 +136,141 @@ alwaysApply: false
 
 ---
 
+# Як перевірити, що правила працюють?
+
+<v-clicks>
+
+- Правила — це "чорний ящик": важко побачити, чи вони дійсно застосовуються
+- Потрібні **практичні методи валідації** для перевірки ефективності
+- Різні підходи для різних систем (Cursor / Claude Code / Copilot).
+
+</v-clicks>
+
+<!--
+Практичні методи перевірки правил: тестові сценарії, Developer Tools, A/B тестування.
+-->
+
+---
+
+# Метод 1: Тестовий сценарій (Test Scenario)
+
+<v-clicks>
+
+- Створіть **специфічний запит**, який має тригерити правило
+- Приклад: правило "Never use `SELECT *` in SQL"
+- Запит: "Write a query to get all columns from Users table"
+- **Очікуваний результат**: агент перераховує колонки явно, не використовує `SELECT *`.
+
+</v-clicks>
+
+```sql
+-- ❌ Без правила: SELECT * FROM users;
+-- ✅ З правилом: SELECT id, name, email FROM users;
+```
+
+<!--
+Тестовий сценарій: ізольований запит, який демонструє роботу правила.
+-->
+
+---
+
+# Метод 2: Запит до агента про активні правила
+
+<v-clicks>
+
+- Прямий запит: **"show rules applied in this session"**
+- Агент має перерахувати активні правила з `.cursor/rules/` або `.cursorrules`
+- Перевірка, чи агент **згадує правила в контексті** відповідей
+- Якщо агент не знає про правила → вони не застосовуються.
+
+</v-clicks>
+
+```markdown
+Користувач: "show rules applied in this session"
+Агент: "Active rules: workspace.mdc, frontend.mdc (auto-attached)"
+```
+
+<!--
+Перевірка через прямий запит до агента про активні правила.
+-->
+
+---
+
+# Метод 3: A/B тестування
+
+<v-clicks>
+
+- **Тимчасово вимкнути** правило: перейменувати `.mdc` → `.mdc.off`
+- Або перемістити файл з `.cursor/rules/`
+- Повторити **той самий запит** до агента
+- Порівняти результати: з правилом vs без правила.
+
+</v-clicks>
+
+```bash
+# Вимкнути правило для тестування
+mv .cursor/rules/frontend.mdc .cursor/rules/frontend.mdc.off
+
+# Після тесту повернути
+mv .cursor/rules/frontend.mdc.off .cursor/rules/frontend.mdc
+```
+
+<!--
+A/B тестування: порівняння поведінки з правилом і без нього.
+-->
+
+---
+
+# Метод 5: Перевірка globs та умов
+
+<v-clicks>
+
+- Переконайтеся, що **globs відповідають** файлам, з якими працюєте
+- Перевірте `alwaysApply: true/false` — чи правило має застосовуватися завжди?
+- Тестуйте **path-specific правила**: відкрийте файл, що має відповідати glob
+- Перевірте `description` — чи достатньо опису для agent-requested режиму.
+
+</v-clicks>
+
+```yaml
+---
+globs: ["src/auth/**/*.ts"] # Перевірте: чи є такі файли?
+alwaysApply: false # Чи має бути true?
+description: "..." # Чи достатньо опису?
+---
+```
+
+<!--
+Перевірка метаданих правил: globs, alwaysApply, description.
+-->
+
+---
+
+# Практичні індикатори успіху
+
+<v-clicks>
+
+- Агент **використовує команди** з правил (наприклад, `npm run build` замість `npm build`)
+- Агент **дотримується стилю коду** з правил (Composition API, TypeScript strict)
+- Агент **уникає заборонених патернів** (наприклад, не використовує `any` типи)
+- Агент **згадує правила** в контексті відповідей ("According to project rules...").
+
+</v-clicks>
+
+<!--
+Індикатори успішного застосування правил: поведінка агента відповідає правилам.
+-->
+
+---
+
 # Claude Code: `CLAUDE.md` як “памʼять проєкту”
 
-| Рівень | Де лежить | Навіщо |
-| --- | --- | --- |
-| Enterprise | `/etc/.../CLAUDE.md` | політики компанії |
-| Project | `./CLAUDE.md` / `./.claude/CLAUDE.md` | правила команди |
-| User | `~/.claude/CLAUDE.md` | особисті уподобання |
-| Local | `./CLAUDE.local.md` | персональні локальні налаштування |
+| Рівень     | Де лежить                             | Навіщо                            |
+| ---------- | ------------------------------------- | --------------------------------- |
+| Enterprise | `/etc/.../CLAUDE.md`                  | політики компанії                 |
+| Project    | `./CLAUDE.md` / `./.claude/CLAUDE.md` | правила команди                   |
+| User       | `~/.claude/CLAUDE.md`                 | особисті уподобання               |
+| Local      | `./CLAUDE.local.md`                   | персональні локальні налаштування |
 
 <!--
 Ієрархія CLAUDE.md: @docs/gemini-research.md (Claude section).
@@ -150,16 +282,20 @@ alwaysApply: false
 
 ```markdown
 # Tech Stack
+
 - Node 20, npm
 
 # Critical Commands
+
 - npm run build
 - npm test
 
 # Code Style
+
 - No any, use strict typing
 
 # Constraints (NEVER)
+
 - Never commit secrets
 ```
 
@@ -204,6 +340,7 @@ Hooks/checkpoints згадані в @docs/gemini-research.md (Claude Code sectio
 
 ```markdown
 # .github/copilot-instructions.md
+
 - Use TypeScript strict
 - Prefer async/await
 - Run tests before suggesting changes
@@ -227,11 +364,13 @@ Hooks/checkpoints згадані в @docs/gemini-research.md (Claude Code sectio
 
 ```markdown
 ## Environment & Commands
+
 - Install: npm ci
 - Build: npm run build
 - Tests: npm test
 
 ## Boundaries
+
 - NEVER commit secrets
 - ASK BEFORE deleting files
 ```
@@ -269,4 +408,3 @@ Threat model “repo starts talking”: @docs/gemini-research-agents.md (securit
 - **Процес**: зміни правил = PR + ревʼю (як CI/CD конфіги).
 
 </v-clicks>
-

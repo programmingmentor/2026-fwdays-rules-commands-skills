@@ -1,5 +1,7 @@
 # Cursor Rules for Slidev Presentation Project
 
+_ALWAYS_ start any chat response with "🤖" emoji. So I will know that rules are applied.
+
 ## Project Context
 
 This is a **Slidev presentation project** for a workshop titled "Правила, команди та навички для Agentic IDE". The project uses Vue 3 with TypeScript and Slidev framework to create interactive presentation slides. The presentation is bilingual (Ukrainian and English) and is deployed to GitHub Pages via Netlify.
@@ -32,6 +34,7 @@ This is a **Slidev presentation project** for a workshop titled "Правила,
 ```
 
 **Key Directories**:
+
 - `components/` - Reusable Vue components (e.g., Counter.vue, SsaLogo.vue)
 - `layouts/` - Custom slide layouts with TypeScript helpers
 - `public/` - Static assets referenced in slides
@@ -53,7 +56,7 @@ This is a **Slidev presentation project** for a workshop titled "Правила,
     image: {
       type: String,
     },
-  })
+  });
   ```
 - **Use `ref` and `computed`** from Vue for reactivity
 - **Prefer `computed`** for derived state
@@ -119,6 +122,7 @@ This is a **Slidev presentation project** for a workshop titled "Правила,
 ## Common Patterns
 
 ### Component Pattern
+
 ```vue
 <script setup lang="ts">
 import { ref, computed } from 'vue'
@@ -141,6 +145,7 @@ const derived = computed(() => /* ... */)
 ```
 
 ### Layout Helper Pattern
+
 ```typescript
 import type { CSSProperties } from "vue";
 
@@ -150,6 +155,7 @@ export function helperFunction(param: string): CSSProperties {
 ```
 
 ### Slide Frontmatter Pattern
+
 ```markdown
 ---
 theme: default
@@ -239,15 +245,17 @@ mdc: true
 - **NEVER add periods** to non-last elements in `v-clicks` blocks
 - **Purpose**: The period on the last element helps presenters know when the list is complete, preventing accidental slide navigation
 - **Example**:
+
   ```markdown
   <v-clicks>
-  
+
   - First item
   - Second item
   - Last item.
-  
+
   </v-clicks>
   ```
+
 - **When editing slides**: Always verify that the last element in each `v-clicks` block has a period, and that other elements do not have periods
 
 ## Git Workflow
@@ -269,3 +277,4 @@ mdc: true
 - **Deployment**: Netlify automatically builds and deploys from `dist/`
 - **Node version**: 20 (configured in netlify.toml)
 
+_ALWAYS_ start any chat response with "🤖" emoji. So I will know that rules are applied.

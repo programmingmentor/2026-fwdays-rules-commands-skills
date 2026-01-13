@@ -2,7 +2,7 @@
 
 This file is a **catalog of repeatable workflows** (“skills”) for working on this Slidev deck.
 
-Use it as a team reference: *when to use a skill*, *what inputs it needs*, and *what “done” looks like*.
+Use it as a team reference: _when to use a skill_, _what inputs it needs_, and _what “done” looks like_.
 
 ---
 
@@ -55,4 +55,3 @@ Use it as a team reference: *when to use a skill*, *what inputs it needs*, and *
 - **When**: after non-trivial edits.
 - **Inputs**: repository working tree.
 - **Outputs**: `npm run build` passes (no missing imports, broken Markdown, or invalid Mermaid).
-

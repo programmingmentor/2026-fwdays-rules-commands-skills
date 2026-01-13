@@ -2,14 +2,14 @@
 layout: center
 ---
 
-# Підсумок (Key takeaways)
+# Підсумок
 
 <v-clicks>
 
 - Agentic IDE = **контекст + інструменти + памʼять**
 - Правила — **policy**, команди — **шаблони (templates)**, навички (skills) — **workflows**, памʼять — **стан**
 - Найбільший буст якості: **Plan → Act → Verify → Update**
-- Стандартизуємо “tribal knowledge” → у репозиторій
+- Стандартизуємо “неписані правила” → у репозиторій.
 
 </v-clicks>
 
@@ -32,14 +32,6 @@ layout: center
 
 # Q&A
 
-<v-clicks>
-
-- Де у вас найбільше “хаосу контексту” сьогодні?
-- Які правила ви б додали першими (безпека / стиль / архітектура)?
-- Який workflow вам потрібен завтра: tests? review? refactor?.
-
-</v-clicks>
-
 ---
 
 # Sources / further reading
@@ -50,6 +42,7 @@ layout: center
 - [Agent Skills specification](https://agentskills.io/specification)
 - [Memory Bank System (Agentic Coding Handbook)](https://tweag.github.io/agentic-coding-handbook/WORKFLOW_MEMORY_BANK/)
 - [Claude Code: best practices](https://www.anthropic.com/engineering/claude-code-best-practices)
+- [Claude Code: agent skills best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
 
 <!--
 Повний список джерел є у ваших research-доках у /docs.
