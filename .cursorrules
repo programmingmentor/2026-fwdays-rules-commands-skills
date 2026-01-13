@@ -233,6 +233,23 @@ mdc: true
 - **Reference images** from `public/` directory with `/filename.ext`
 - **Use UnoCSS classes** for layout and styling within slides
 
+### Progressive Reveal (`v-clicks`) Rules
+
+- **ALWAYS add a period (.) to the LAST element** in every `<v-clicks>` block
+- **NEVER add periods** to non-last elements in `v-clicks` blocks
+- **Purpose**: The period on the last element helps presenters know when the list is complete, preventing accidental slide navigation
+- **Example**:
+  ```markdown
+  <v-clicks>
+  
+  - First item
+  - Second item
+  - Last item.
+  
+  </v-clicks>
+  ```
+- **When editing slides**: Always verify that the last element in each `v-clicks` block has a period, and that other elements do not have periods
+
 ## Git Workflow
 
 - **Branch naming**: Not strictly enforced, but prefer descriptive names
