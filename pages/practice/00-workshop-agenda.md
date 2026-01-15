@@ -1,6 +1,21 @@
+
 ---
 layout: center
 routeAlias: practice
+---
+
+# Практична частина: робимо Slidev deck з Agentic IDE
+
+<v-clicks>
+
+- Ціль: зібрати систему **Rules / Commands / Skills** для цього репозиторію
+- Інструменти: **Cursor** або **Claude Code** (паралельні треки)
+- Наприкінці: `npm run build` зелений + “skills catalog” у `SKILLS.md`.
+
+</v-clicks>
+
+---
+layout: center
 ---
 
 # Старт практики: з чого починаємо
@@ -12,20 +27,6 @@ routeAlias: practice
 - Задача: зібрати свій **слайдогенератор** з Rules / Commands / Skills
 - Деплой: GitHub Pages (або інша платформа) + публічний URL
 - Фінал: створити pull request у базовий репозиторій з результатом.
-
-</v-clicks>
-
----
-layout: center
----
-
-# Практична частина: робимо Slidev deck з Agentic IDE
-
-<v-clicks>
-
-- Ціль: зібрати систему **Rules / Commands / Skills** для цього репозиторію
-- Інструменти: **Cursor** або **Claude Code** (паралельні треки)
-- Наприкінці: `npm run build` зелений + “skills catalog” у `SKILLS.md`.
 
 </v-clicks>
 

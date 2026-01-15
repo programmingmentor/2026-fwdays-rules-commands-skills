@@ -38,4 +38,3 @@ Common commands:
 ## Memory Bank (recommended)
 
 - Keep current work state in `docs/memory/activeContext.md` and `docs/memory/progress.md`.
-

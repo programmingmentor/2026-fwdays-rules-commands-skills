@@ -1,0 +1,5 @@
+---
+description: Apply when working with authentication modules
+globs: **/*.md
+alwaysApply: false
+---
