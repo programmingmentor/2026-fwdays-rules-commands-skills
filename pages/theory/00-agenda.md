@@ -1,8 +1,9 @@
 ---
 layout: center
+routeAlias: theory
 ---
 
-# Теоретична частина: правила, команди та навички (Rules, Commands, Skills)
+# Теоретична частина: правила, команди та навички
 
 <v-clicks>
 

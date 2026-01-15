@@ -79,6 +79,27 @@ image: /vyacheslav-koldovskyy.png
 - Лінкедін: [koldovsky](https://www.linkedin.com/in/koldovsky/)
 
 ---
+layout: center
+---
+
+# Навігація
+
+<div class="mt-8 flex justify-center gap-6">
+  <Link
+    to="theory"
+    class="px-6 py-3 rounded text-lg bg-white/10 hover:bg-white/20"
+  >
+    Теоретична частина
+  </Link>
+  <Link
+    to="practice"
+    class="px-6 py-3 rounded text-lg bg-white/10 hover:bg-white/20"
+  >
+    Практична частина
+  </Link>
+</div>
+
+---
 src: ./pages/theory/00-agenda.md
 ---
 
@@ -120,6 +141,30 @@ src: ./pages/theory/09-bonus-ralph-wiggum.md
 
 ---
 src: ./pages/theory/10-wrap-up.md
+---
+
+---
+src: ./pages/practice/00-workshop-agenda.md
+---
+
+---
+src: ./pages/practice/01-rules.md
+---
+
+---
+src: ./pages/practice/02-commands.md
+---
+
+---
+src: ./pages/practice/03-skills.md
+---
+
+---
+src: ./pages/practice/04-skill-openai-image.md
+---
+
+---
+src: ./pages/practice/05-wrap-up.md
 ---
 
 ---
