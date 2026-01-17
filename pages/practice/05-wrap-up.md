@@ -2,6 +2,9 @@
 layout: center
 ---
 
+<Lang>
+<template #uk>
+
 # Wrap-up: що забираємо з собою
 
 <v-clicks>
@@ -12,9 +15,28 @@ layout: center
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Wrap-up: what we take with us
+
+<v-clicks>
+
+- Rules as persistent context: short, verifiable, conflict-free
+- Commands as standardized requests: fast, repeatable, “same shape”
+- Skills as procedures: steps + checks + DoD.
+
+</v-clicks>
+
+</template>
+</Lang>
+
 ---
 layout: center
 ---
+
+<Lang>
+<template #uk>
 
 # Фінальний DoD воркшопу (перевірка)
 
@@ -27,9 +49,29 @@ layout: center
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Final workshop DoD (verification)
+
+<v-clicks>
+
+- Repo contains: rules + commands + skills (Cursor and Claude tracks)
+- Advanced workflow works: generated PNG and added a slide
+- `npm run build` passes
+- Secrets did not enter git (keys only in env).
+
+</v-clicks>
+
+</template>
+</Lang>
+
 ---
 layout: center
 ---
+
+<Lang>
+<template #uk>
 
 # Як підтримувати систему (після воркшопу)
 
@@ -42,3 +84,19 @@ layout: center
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# How to maintain the system (after the workshop)
+
+<v-clicks>
+
+- Add a rule when the agent **repeats** the same mistake
+- Update rules alongside stack/architecture changes
+- Rules/skills changes — via PR + review (like CI/CD configs)
+- Keep artifacts short: “less = better”.
+
+</v-clicks>
+
+</template>
+</Lang>

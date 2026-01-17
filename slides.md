@@ -22,6 +22,9 @@ mdc: true
 overviewSnapshots: true
 ---
 
+<Lang>
+<template #uk>
+
 # Правила, команди та навички для Agentic IDE
 
 В’ячеслав Колдовський
@@ -32,6 +35,10 @@ overviewSnapshots: true
   </span>
 </div>
 
+<div class="mt-6">
+  <LanguageSelector />
+</div>
+
 <div class="m-6 flex gap-2 fixed bottom-0 left-0">
   <a href="https://www.youtube.com/c/programmingmentorua" class="social-link">
     <div class="h-8 w-8">
@@ -39,6 +46,34 @@ overviewSnapshots: true
     </div>
   </a>
 </div>
+
+</template>
+<template #en>
+
+# Rules, Commands, and Skills for Agentic IDE
+
+Vyacheslav Koldovskyy
+
+<div class="pt-12">
+  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
+    <carbon:arrow-right class="inline"/>
+  </span>
+</div>
+
+<div class="mt-6">
+  <LanguageSelector />
+</div>
+
+<div class="m-6 flex gap-2 fixed bottom-0 left-0">
+  <a href="https://www.youtube.com/c/programmingmentorua" class="social-link">
+    <div class="h-8 w-8">
+      <img src="/pm-logo.jpg" class="h-full w-full rounded-full"/>
+    </div>
+  </a>
+</div>
+
+</template>
+</Lang>
 
 <style>
   .social-link {
@@ -55,7 +90,18 @@ overviewSnapshots: true
 class: text-center
 ---
 
+<Lang>
+<template #uk>
+
 <div class="absolute inset-0 w-full h-full" style="background-image: url('/fw-days-promo.jpg'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+
+</template>
+<template #en>
+
+<div class="absolute inset-0 w-full h-full" style="background-image: url('/fw-days-promo.jpg'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+
+</template>
+</Lang>
 
 <style>
   .slidev-page {
@@ -68,6 +114,9 @@ layout: image-left
 image: /vyacheslav-koldovskyy.png
 ---
 
+<Lang>
+<template #uk>
+
 # В’ячеслав Колдовський
 
 - Ph.D, доцент, 20+ років в IT
@@ -78,9 +127,28 @@ image: /vyacheslav-koldovskyy.png
 - Блогер: [t.me/programmingmentor](https://t.me/programmingmentor)
 - Лінкедін: [koldovsky](https://www.linkedin.com/in/koldovsky/)
 
+</template>
+<template #en>
+
+# Vyacheslav Koldovskyy
+
+- Ph.D., Associate Professor, 20+ years in IT
+- Competence Manager, SoftServe
+- Certified Google Cloud Professional Architect, Certified NVIDIA Generative AI with LLMs
+- Head of the Generative AI Center at IT STEP University
+- YouTuber: [youtube.com/@programmingmentorua](https://www.youtube.com/@programmingmentorua)
+- Blogger: [t.me/programmingmentor](https://t.me/programmingmentor)
+- LinkedIn: [koldovsky](https://www.linkedin.com/in/koldovsky/)
+
+</template>
+</Lang>
+
 ---
 layout: center
 ---
+
+<Lang>
+<template #uk>
 
 # Навігація
 
@@ -98,6 +166,29 @@ layout: center
     Практична частина
   </Link>
 </div>
+
+</template>
+<template #en>
+
+# Navigation
+
+<div class="mt-8 flex justify-center gap-6">
+  <Link
+    to="theory"
+    class="px-6 py-3 rounded text-lg bg-white/10 hover:bg-white/20"
+  >
+    Theory
+  </Link>
+  <Link
+    to="practice"
+    class="px-6 py-3 rounded text-lg bg-white/10 hover:bg-white/20"
+  >
+    Practice
+  </Link>
+</div>
+
+</template>
+</Lang>
 
 ---
 src: ./pages/theory/00-agenda.md
@@ -171,8 +262,23 @@ src: ./pages/practice/05-wrap-up.md
 layout: end
 ---
 
+<Lang>
+<template #uk>
+
 # Дякую!
 
 <div class="w-full flex justify-center mt-20">
   <a href="https://programmingmentor.github.io/2026-fwdays-rules-commands-skills/">programmingmentor.github.io/2026-fwdays-rules-commands-skills</a>
 </div>
+
+</template>
+<template #en>
+
+# Thank you!
+
+<div class="w-full flex justify-center mt-20">
+  <a href="https://programmingmentor.github.io/2026-fwdays-rules-commands-skills/">programmingmentor.github.io/2026-fwdays-rules-commands-skills</a>
+</div>
+
+</template>
+</Lang>

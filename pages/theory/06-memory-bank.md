@@ -2,6 +2,9 @@
 layout: center
 ---
 
+<Lang>
+<template #uk>
+
 # Memory Bank: як зробити агента “stateful” (памʼятаючим)
 
 <v-clicks>
@@ -11,12 +14,30 @@ layout: center
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Memory Bank: how to make an agent “stateful”
+
+<v-clicks>
+
+- LLMs are **stateless** by nature
+- You need external memory → **files in the repo**.
+
+</v-clicks>
+
+</template>
+</Lang>
+
 <!--
 Memory Bank як патерн: @docs/chatgpt-reasearch.md (Memory Bank),
 @docs/claude-research.md + @docs/gemini-research-agents.md.
 -->
 
 ---
+
+<Lang>
+<template #uk>
 
 # Проблема: “амнезія” + context saturation
 
@@ -28,7 +49,26 @@ Memory Bank як патерн: @docs/chatgpt-reasearch.md (Memory Bank),
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Problem: “amnesia” + context saturation
+
+<v-clicks>
+
+- New chat/session → the model doesn’t remember *why* decisions were made
+- Long session → important info is pushed out → agent drifts from rules
+- Result: **hallucinations**, rework, conflicting decisions.
+
+</v-clicks>
+
+</template>
+</Lang>
+
 ---
+
+<Lang>
+<template #uk>
 
 # Рішення: Memory Bank як “зовнішній мозок”
 
@@ -40,7 +80,26 @@ Memory Bank як патерн: @docs/chatgpt-reasearch.md (Memory Bank),
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Solution: Memory Bank as an “external brain”
+
+<v-clicks>
+
+- A standardized set of markdown files
+- The agent **must** read them at the start and update after work
+- This isn’t “docs for show”, it’s **operational context**.
+
+</v-clicks>
+
+</template>
+</Lang>
+
 ---
+
+<Lang>
+<template #uk>
 
 # Канонічна структура (приклад)
 
@@ -64,11 +123,42 @@ docs/
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Canonical structure (example)
+
+```text
+docs/
+  memory/
+    projectbrief.md
+    productContext.md
+    systemPatterns.md
+    techContext.md
+    activeContext.md
+    progress.md
+    decisionLog.md
+```
+
+<v-clicks>
+
+- `activeContext.md` = “working memory” (what/why/next)
+- `systemPatterns.md` = architectural patterns (how we do things)
+- `decisionLog.md` = key decisions + rationale (so we don’t argue again).
+
+</v-clicks>
+
+</template>
+</Lang>
+
 <!--
 Структура зібрана з @docs/gemini-research.md та @docs/claude-research.md.
 -->
 
 ---
+
+<Lang>
+<template #uk>
 
 # `activeContext.md`: що там має бути
 
@@ -82,7 +172,28 @@ docs/
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# `activeContext.md`: what it should include
+
+<v-clicks>
+
+- **Current Focus**: what we’re doing right now
+- **Constraints**: important task constraints
+- **Plan**: 3–7 steps, briefly
+- **Open Questions**: what needs clarification
+- **Next Steps**: checklist of next actions.
+
+</v-clicks>
+
+</template>
+</Lang>
+
 ---
+
+<Lang>
+<template #uk>
 
 # Стабільні vs волатильні файли (volatility)
 
@@ -94,7 +205,26 @@ docs/
 | `activeContext.md` | висока | поточна задача |
 | `progress.md` | висока | статус і прогрес |
 
+</template>
+<template #en>
+
+# Stable vs volatile files (volatility)
+
+| File | Volatility | Purpose |
+| --- | --- | --- |
+| `projectbrief.md` | low | PRD, project description |
+| `systemPatterns.md` | medium | patterns/architecture |
+| `techContext.md` | medium | stack, versions, commands |
+| `activeContext.md` | high | current task |
+| `progress.md` | high | status and progress |
+
+</template>
+</Lang>
+
 ---
+
+<Lang>
+<template #uk>
 
 # Протокол: Read → Verify → Execute → Update
 
@@ -108,11 +238,36 @@ flowchart LR
 
 <v-clicks>
 
-- “Update memory” = агент навчився, а не ви “втомилися пояснювати”
+- “Update memory” = агент навчився, а не ви “втомилися пояснювати”.
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Protocol: Read → Verify → Execute → Update
+
+```mermaid
+flowchart LR
+  Read[Read_memory] --> Verify[Verify_against_constraints]
+  Verify --> Execute[Execute_changes]
+  Execute --> Update[Update_memory]
+  Update --> Read
+```
+
+<v-clicks>
+
+- “Update memory” = the agent learned, not you “got tired of explaining”.
+
+</v-clicks>
+
+</template>
+</Lang>
+
 ---
+
+<Lang>
+<template #uk>
 
 # Рівні складності задач (щоб не “переплановувати” просте)
 
@@ -124,7 +279,26 @@ flowchart LR
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Task complexity levels (so you don’t over-plan simple work)
+
+<v-clicks>
+
+- **Level 1**: quick fix → short plan, quick check
+- **Level 2**: module feature → plan + tests
+- **Level 3–4**: new system/migration → design options + risks + staging.
+
+</v-clicks>
+
+</template>
+</Lang>
+
 ---
+
+<Lang>
+<template #uk>
 
 # Фази workflow (приклад)
 
@@ -139,11 +313,33 @@ flowchart LR
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Workflow phases (example)
+
+<v-clicks>
+
+- **Triage**: assess whether a detailed process is needed
+- **Plan**: plan without code (what/where/how to verify)
+- **Design**: alternatives, trade-offs (pros/cons)
+- **Build**: implementation by the plan
+- **Reflect**: review the result + update rules/patterns
+- **Archive**: record the outcome, “clear” active context.
+
+</v-clicks>
+
+</template>
+</Lang>
+
 <!--
 Опис фаз: @docs/gemini-research-agents.md (framework section).
 -->
 
 ---
+
+<Lang>
+<template #uk>
 
 # Чому Memory Bank реально зменшує галюцинації
 
@@ -155,7 +351,26 @@ flowchart LR
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Why Memory Bank really reduces hallucinations
+
+<v-clicks>
+
+- The agent sees **accepted decisions** → less “making things up”
+- Fewer contradictions between sessions
+- New agent/person onboards faster (single source of truth).
+
+</v-clicks>
+
+</template>
+</Lang>
+
 ---
+
+<Lang>
+<template #uk>
 
 # Типові помилки Memory Bank
 
@@ -168,3 +383,19 @@ flowchart LR
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Common Memory Bank mistakes
+
+<v-clicks>
+
+- “Created, but not updated” → becomes a **source of errors**
+- Very long files → compete for context
+- Duplication instead of links/short notes
+- No protocol (“when to update and who”).
+
+</v-clicks>
+
+</template>
+</Lang>

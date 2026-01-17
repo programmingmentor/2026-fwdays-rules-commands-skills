@@ -2,6 +2,9 @@
 layout: center
 ---
 
+<Lang>
+<template #uk>
+
 # Якість, безпека, комплаєнс (Quality, Security, Compliance)
 
 <v-clicks>
@@ -11,7 +14,25 @@ layout: center
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Quality, security, compliance
+
+<v-clicks>
+
+- The agent boosts productivity **and** risks
+- So you need **guardrails + checks + process**.
+
+</v-clicks>
+
+</template>
+</Lang>
+
 ---
+
+<Lang>
+<template #uk>
 
 # Антипатерни правил (Rules anti-patterns)
 
@@ -24,11 +45,31 @@ layout: center
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Rules anti-patterns
+
+<v-clicks>
+
+- **Too long** rules → the model ignores part of them
+- **Conflicting** rules → unstable behavior
+- **Vague** (“make it better”) → scope creep
+- **Unverifiable** (“no vulnerabilities”, “O(1) always”) → self-deception.
+
+</v-clicks>
+
+</template>
+</Lang>
+
 <!--
 Антипатерни детально: @docs/chatgpt-reasearch.md, @docs/gemini-research.md.
 -->
 
 ---
+
+<Lang>
+<template #uk>
 
 # Definition of Done (DoD) для задачі агенту
 
@@ -41,7 +82,27 @@ layout: center
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Definition of Done (DoD) for an agent task
+
+<v-clicks>
+
+- What exactly must be done (files/functions/features)
+- Which **constraints** must not be broken (APIs, migrations, licenses)
+- Which **checks** must pass (build/test/lint)
+- What “failure modes” are and how we respond.
+
+</v-clicks>
+
+</template>
+</Lang>
+
 ---
+
+<Lang>
+<template #uk>
 
 # Quality gates: “довіряй, але перевіряй”
 
@@ -60,7 +121,33 @@ flowchart LR
   Tests --> Review[Review_checklist]
 ```
 
+</template>
+<template #en>
+
+# Quality gates: “trust, but verify”
+
+<v-clicks>
+
+- Minimum: **build** after a series of changes
+- Better: **tests** (especially for business logic)
+- Ideal: automated loop “until green” (hooks/workflows).
+
+</v-clicks>
+
+```mermaid
+flowchart LR
+  Change[Change_code] --> Build[Build]
+  Build --> Tests[Tests]
+  Tests --> Review[Review_checklist]
+```
+
+</template>
+</Lang>
+
 ---
+
+<Lang>
+<template #uk>
 
 # Security constraints (приклади “NEVER/ALWAYS”)
 
@@ -73,7 +160,27 @@ flowchart LR
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Security constraints (examples of “NEVER/ALWAYS”)
+
+<v-clicks>
+
+- ⛔ **NEVER**: hardcode keys/tokens, add `.env` to git
+- ✅ **ALWAYS**: validate inputs, parameterize DB queries
+- ✅ **ALWAYS**: don’t log PII/secrets, don’t expose stack traces
+- ⚠️ **ASK FIRST**: network requests, IAM/ACL changes, opening ports.
+
+</v-clicks>
+
+</template>
+</Lang>
+
 ---
+
+<Lang>
+<template #uk>
 
 # Dependency hygiene (залежності)
 
@@ -85,7 +192,26 @@ flowchart LR
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Dependency hygiene
+
+<v-clicks>
+
+- Use **up-to-date** library versions (avoid CVEs/old APIs)
+- Prefer “mainstream” packages with active maintenance
+- Policies: dependency allow-list / deny-list.
+
+</v-clicks>
+
+</template>
+</Lang>
+
 ---
+
+<Lang>
+<template #uk>
 
 # Ліцензії (License compliance)
 
@@ -97,11 +223,30 @@ flowchart LR
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Licenses (license compliance)
+
+<v-clicks>
+
+- Risk: AI can generate fragments similar to OSS code
+- Mitigations: license scanners in CI, “no copyleft” policies, attribution
+- Practice: “agent suggests deps, human approves licenses”.
+
+</v-clicks>
+
+</template>
+</Lang>
+
 <!--
 Про ризик “matching” коду і потребу сканінгу: @docs/gemini-research.md (license section).
 -->
 
 ---
+
+<Lang>
+<template #uk>
 
 # Privacy & data governance
 
@@ -113,7 +258,26 @@ flowchart LR
 
 </v-clicks>
 
+</template>
+<template #en>
+
+# Privacy & data governance
+
+<v-clicks>
+
+- Never put in prompts: **PII**, keys, private URLs, internal incidents
+- Rule: “AI output = untrusted input” (review like junior code)
+- Separate: public examples vs internal data.
+
+</v-clicks>
+
+</template>
+</Lang>
+
 ---
+
+<Lang>
+<template #uk>
 
 # Ревʼю: агент як перший ревʼюер, людина як фінальний
 
@@ -124,3 +288,19 @@ flowchart LR
 - Людина: підтверджує намір, бізнес-логіку, trade-offs.
 
 </v-clicks>
+
+</template>
+<template #en>
+
+# Review: agent as first reviewer, human as final
+
+<v-clicks>
+
+- Agent reviewer: style, security, edge cases, consistency
+- Review checklist: architecture, tests, security, licenses, risks
+- Human: confirms intent, business logic, trade-offs.
+
+</v-clicks>
+
+</template>
+</Lang>
