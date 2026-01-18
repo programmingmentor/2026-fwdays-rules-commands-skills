@@ -36,15 +36,7 @@ overviewSnapshots: true
 </div>
 
 <div class="mt-6">
-  <LanguageSelector />
-</div>
-
-<div class="m-6 flex gap-2 fixed bottom-0 left-0">
-  <a href="https://www.youtube.com/c/programmingmentorua" class="social-link">
-    <div class="h-8 w-8">
-      <img src="/pm-logo.jpg" class="h-full w-full rounded-full"/>
-    </div>
-  </a>
+  <LanguageSelector variant="full" />
 </div>
 
 </template>
@@ -61,15 +53,7 @@ Vyacheslav Koldovskyy
 </div>
 
 <div class="mt-6">
-  <LanguageSelector />
-</div>
-
-<div class="m-6 flex gap-2 fixed bottom-0 left-0">
-  <a href="https://www.youtube.com/c/programmingmentorua" class="social-link">
-    <div class="h-8 w-8">
-      <img src="/pm-logo.jpg" class="h-full w-full rounded-full"/>
-    </div>
-  </a>
+  <LanguageSelector variant="full" />
 </div>
 
 </template>

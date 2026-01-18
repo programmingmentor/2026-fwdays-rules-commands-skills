@@ -7,6 +7,7 @@ const titleByLanguage: Record<Language, string> = {
   en: 'Rules, Commands, and Skills for Agentic IDE',
   uk: 'Правила, команди та навички для Agentic IDE',
 }
+const storageKey = 'slidev_lang'
 let isInitialized = false
 let hasListeners = false
 
@@ -19,6 +20,12 @@ function parseLanguageFromUrl(): Language {
   const langParam = url.searchParams.get('lang')
 
   if (langParam?.toLowerCase() === 'uk') {
+    return 'uk'
+  }
+
+  const storedLanguage = window.localStorage.getItem(storageKey)
+
+  if (storedLanguage === 'uk') {
     return 'uk'
   }
 
@@ -62,6 +69,8 @@ function setLanguage(nextLanguage: Language): void {
   if (typeof window === 'undefined') {
     return
   }
+
+  window.localStorage.setItem(storageKey, nextLanguage)
 
   const url = new URL(window.location.href)
 
