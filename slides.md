@@ -70,28 +70,6 @@ Vyacheslav Koldovskyy
   }
 </style>
 
----
-class: text-center
----
-
-<Lang>
-<template #uk>
-
-<div class="absolute inset-0 w-full h-full" style="background-image: url('/fw-days-promo.jpg'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
-
-</template>
-<template #en>
-
-<div class="absolute inset-0 w-full h-full" style="background-image: url('/fw-days-promo.jpg'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
-
-</template>
-</Lang>
-
-<style>
-  .slidev-page {
-    background: transparent !important;
-  }
-</style>
 
 ---
 layout: image-left
